@@ -1,2 +1,58 @@
-# browser-test
-æµè§ˆå™¨æ£€æµ‹
+browser test
+
+window.navigator.appName ä¯ÀÀÆ÷Ãû³Æ ²»×¼È·
+window.navigator.userAgent ÓÃ»§´úÀí×Ö·û´® ±íÊ¾ä¯ÀÀÆ÷ĞÅÏ¢
+window.navigator.platform ÓÃ»§ËùÔÚÏµÍ³win32 mac unix
+
+ä¯ÀÀÆ÷ĞáÌ½Æ÷£¨¾«È·£©
+BrowserDetect.browser  ä¯ÀÀÆ÷Ãû³Æ
+BrowserDetect.version   ä¯ÀÀÆ÷°æ±¾
+BrowserDetect.OS          ä¯ÀÀÆ÷ËùÔÚÏµÍ³
+
+²å¼ş¼ì²â
+navigator.plugins ÊÇÒ»¸öÊı×é£¬´æ´¢ä¯ÀÀÆ÷ÒÑ¾­°²×°²å¼şµÄÍêÕûÁĞ±í
+window.navigator.plugins[i].name         ²å¼şÃû
+window.navigator.plugins[i].filename     ÎÄ¼şÃû
+window.navigator.plugins[i].description   ÃèÊöĞÅÏ¢
+
+¼ì²â·ÇIEä¯ÀÀÆ÷ÊÇ·ñ´æÔÚÄ³²å¼ş
+function hasPlugin(name){
+      var name = name.toLowerCase();
+      for(var i=0; i<window.navigator.plugin.length; i++)
+      {
+            if(window.navigator.plugins[i].name.toLowerCase().indexOf(name) > -1)
+            {
+                      return true;  
+            }
+            else
+            {
+                      return false;
+            }
+      }
+}
+
+¿Í»§¶Ë¼ì²â£º
+1£©ÄÜÁ¦¼ì²â
+ÀıÈçIEä¯ÀÀÆ÷ÎŞ·¨window.innerWidth»ñÈ¡¿í¶È·µ»Øunderfind
+¾Í¿ÉÅĞ¶ÏÊÇ·ñ·µ»ØunderfindÈ»ºóÔÙÊ¹ÓÃÊÊºÏIEµÄ
+
+2£©¹Öñ±¼ì²â ²»½¨Òé
+Í¨¹ıbug¼ì²â
+var box = {
+    toString : function(){}
+};
+for(var o in box){
+     alert(o);
+}
+ÓÉÓÚIEµÄÒ»¸öBUG£¬Î´µ¯¿ò£¬¿ÉÅĞ¶ÏIE 
+
+3£©ÓÃ»§´úÀí¼ì²â
+window.navigator.userAgent  ±íÊ¾ä¯ÀÀÆ÷ĞÅÏ¢×Ö·û´®
+
+ä¯ÀÀÆ÷µÄ³ÊÏÖÒıÇæ£ºÓÃÓÚÅÅ°æÍøÒ³ºÍ½âÊÍä¯ÀÀÆ÷µÄÒıÇæ
+IE -- Trident     IE8 ÌåÏÖ³öÀ´ÁË£¬Ö®Ç°µÄÎ´ÌåÏÖ
+Firefox -- Gecko
+Opera -- Presto     ¾É°æ±¾¸ù±¾ÎŞ·¨ÌåÏÖ³ÊÏÖÒıÇæ
+Chrome -- WebKit  WebKitÊÇKHTML³ÊÏÖÒıÇæµÄÒ»¸ö·ÖÖ§£¬ºó¶ÀÁ¢¿ªÀ´
+Safari -- WebKit
+Konqueror -- KHTML
